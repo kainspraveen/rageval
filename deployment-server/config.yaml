@@ -1,0 +1,20 @@
+endpoints:
+  - name: completions
+    endpoint_type: llm/v1/completions
+    model:
+      provider: palm
+      name: text-bison-32k
+      config:
+        palm_api_key: $GOOGLE_APPLICATION_CREDENTIALS
+    limit:
+      renewal_period: minute
+      calls: 10
+
+
+  - name: embeddings
+    endpoint_type: llm/v1/embeddings
+    model:
+      provider: palm
+      name: embeddings-gecko-multilingual
+      config:
+        palm_api_key: $GOOGLE_APPLICATION_CREDENTIALS
