@@ -286,7 +286,7 @@ def run_eval(chain, retriever, eval_qa_pair, grade_prompt, retriever_type, num_n
     # Get answer and log latency
     start_time = time.time()
     
-    temp_dict = chain(eval_qa_pair)
+    temp_dict = chain.invoke(eval_qa_pair)
     temp_dict["text"] = text
     predictions.append(temp_dict)
     gt_dataset.append(eval_qa_pair)
